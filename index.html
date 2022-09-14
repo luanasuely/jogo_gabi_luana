@@ -1,14 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title> Jogo da cobrinha </title>
 </head>
 <body>
-    <h1> Aqui terá o jogo acredita</h1>
-    <h2>pode confiar</h2>
-    Bora lá
+    <canvas id="stage" width="400" height="400"> </canvas>
+    <script type="text/javascript">
+    
+        window.onload = function(){
+
+            var stage = document.getElementById('stage'); //pegando o palco
+            var ctx = stage.getContext("2d") ; //ctx = contexto
+
+            //aqui vamos criar toda parte gráfica/visual do jogo
+            ctx.fillStyle = "black"; //definindo qual é o estilo de preeenchimento do meu contexto
+            ctx.fillRect(0,0, stage.width, stage.height);//comando para pintar nosso palco
+
+        }
+
+    </script>
+
 </body>
 </html>
