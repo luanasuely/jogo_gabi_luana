@@ -20,7 +20,7 @@
             var vx = vy = 0; //velocidade x e y = 0
             var px = 10; //inicia no ponto x = 10
             var py = 15; //inicia no ponto y = 15
-            var lp = 20; //tamanho da peça = 20
+            var tp = 20; //tamanho da peça = 20
             var qp = 20; //quantidade de peça = 20
             var mx = my = 15; //posicao inicial da maçã
 
@@ -28,12 +28,56 @@
             tail = 5; //tamanho da cauda
 
             function game() {
-                px == vx; //posição da cabeça da cobra recebe a posição da velocidade inicial
-                py == vy;
+                px += vx; //posição da cabeça da cobra recebe a posição da velocidade inicial
+                py += vy;
+                if (px <0){
+                    px = qp-1;
+                }
+                if (px > qp-1){
+                    px = 0;
+                }
+                if (py <0){
+                    py = pq-1;
+                }
+                if (py > qp-1){
+                    py = 0;
+                }
 
             //aqui vamos criar toda parte gráfica/visual do jogo
             ctx.fillStyle = "black"; //definindo qual é o estilo de preeenchimento do meu contexto
             ctx.fillRect(0,0, stage.width, stage.height);//comando para pintar nosso palco
+            
+            //pintando a maça
+            ctx.fillStyle= "red";
+            ctx.fillRect(ax*tp, ay*tp, tp,tp);
+
+            //pintando a cobra
+            ctx.fillStyle = "gray";
+            for (var i = 0; i < trail.length; i ++){
+                ctx.fillRect(trail[i].x*lp, trail[i].y*tp
+                , tp,tp);
+                if (trail[i].x == px && trail[i].y == py)
+                {
+                    vx = vy = 0; //parar a cobra
+                }
+            }
+        
+        //movimento da cobra 
+        trail.push({x: px, y:py })
+        while (trail.length> tail) {
+            trail.shift(); //tirando a ultima posição
+        }
+        if (ax == px && ay==py){
+            tail++; //maior que o tamanha da cauda, acontece isso
+            ax = Math.floor(Math.random()*qp);
+            ay = Math.floor(Math.random()*qp);
+        }
+
+
+
+
+//aumentando o tamanho da cauda da cobra
+
 
         }
     }
