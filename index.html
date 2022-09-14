@@ -12,11 +12,31 @@
             var stage = document.getElementById('stage'); //pegando o palco
             var ctx = stage.getContext("2d") ; //ctx = contexto
 
+            //inicio, de fato, do jogo
+            setInterval(game, 60);
+
+            const vel = 1; //definição da velocidade, mostra quantas casas que a cobrinha vai passar quando o game for atualizado
+
+            var vx = vy = 0; //velocidade x e y = 0
+            var px = 10; //inicia no ponto x = 10
+            var py = 15; //inicia no ponto y = 15
+            var lp = 20; //tamanho da peça = 20
+            var qp = 20; //quantidade de peça = 20
+            var mx = my = 15; //posicao inicial da maçã
+
+            var trail = [] //elementos que tem no rastro da cobra. como é a posição inicial, o array [] vai começar vazio
+            tail = 5; //tamanho da cauda
+
+            function game() {
+                px == vx; //posição da cabeça da cobra recebe a posição da velocidade inicial
+                py == vy;
+
             //aqui vamos criar toda parte gráfica/visual do jogo
             ctx.fillStyle = "black"; //definindo qual é o estilo de preeenchimento do meu contexto
             ctx.fillRect(0,0, stage.width, stage.height);//comando para pintar nosso palco
 
         }
+    }
 
     </script>
 
