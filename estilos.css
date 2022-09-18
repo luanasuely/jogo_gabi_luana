@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+}
+
+h1 {
+    font-size: 3em;
+    color: rgb(136, 48, 62);
+    font-family: serif;
+    text-align: center;
+    margin: 35px 0;
+}
+
+.centerdiv {
+    text-align: center;
+    margin: 30px;
+}
+
+footer {
+    background-color: rgb(185, 74, 74);
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
